@@ -43,11 +43,15 @@ import { AssigningComponent } from './assigning/assigning.component';
 import { DataService } from './services/data.service';
 import { HttpClientModule }    from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReadSymbolsComponent } from './read_symbols/read_symbols.component';
+import { ReadWordsComponent } from './read_words/read_words.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AssigningComponent
+    AssigningComponent,
+    ReadSymbolsComponent,
+    ReadWordsComponent
   ],
   imports: [
     BrowserModule,
