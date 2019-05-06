@@ -8,7 +8,7 @@ import { Sign } from '../models/sign';
   providedIn: 'root'
 })
 export class DataService {
-  url: string = "";
+  url: string = "http://localhost:5000/api";
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +21,6 @@ export class DataService {
   }
 
   public getAllWords(): Observable<string[]> {
-    return (this.http.get<string[]>(this.url));
+    return (this.http.get<string[]>(this.url+'/discString'));
   }
 }
