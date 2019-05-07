@@ -18,4 +18,8 @@ export class ReadWordsComponent implements OnInit {
             this.items = data;
         });
     }
+
+    play() {
+        this.dataService.getSound(this.items).subscribe(() => {});
+    }
 }

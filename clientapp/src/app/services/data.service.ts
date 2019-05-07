@@ -8,7 +8,8 @@ import { Sign } from '../models/sign';
   providedIn: 'root'
 })
 export class DataService {
-  url: string = "http://localhost:5000/api";
+  url: string = "https://localhost:44353/api";
+  urlSound: string = "https://localhost:44353/api/Phaistos/convert";
 
   constructor(private http: HttpClient) { }
 
@@ -17,10 +18,14 @@ export class DataService {
   }
 
   public getAssigning(): Observable<Sign[]> {
-    return (this.http.get<Sign[]>(this.url));
+    return (this.http.get<Sign[]>(this.url +'/'));
   }
 
   public getAllWords(): Observable<string[]> {
-    return (this.http.get<string[]>(this.url+'/discString'));
+    return (this.http.get<string[]>(this.url + '/discString'));
+  }
+
+  public getSound(items: string[]): Observable<any> {
+    return (this.http.post<string[]>(this.urlSound, items));
   }
 }

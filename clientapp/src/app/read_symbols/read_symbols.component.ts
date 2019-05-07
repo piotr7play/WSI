@@ -16,6 +16,7 @@ export class ReadSymbolsComponent implements OnInit {
 
     ngOnInit() {
         this.dataService.getAssigning().subscribe((data: Sign[]) => {
+            console.log("data");
             this.items = data;
         });
     }
